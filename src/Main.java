@@ -70,5 +70,83 @@ public class Main {
             default:
                 System.out.println("Такого месяца не существует");
         }
+
+        //Задание 6 первой домашки
+        int a = 12;
+        int b = 27;
+        int c = 44;
+        int d = 15;
+        int e = 9;
+
+        var result = a * (b + (c - d * e));
+        result = result * -1;
+        System.out.println("Результат: "+ result);
+
+        //Задание 7 первой домашки
+        a = 5;
+        b = 7;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("а = " + a + ", b = " + b);
+
+        //Задание 8 первой домашки
+        a = 449;
+        b = a / 10;
+        c = b / 10 * 10;
+        b = b % c;
+
+        System.out.println("а = " + a + ", b = " + b);
+
+        //Задание 6
+        int age = 19;
+        int salary = 58_000;
+        int limit;
+        double finalLimit = 0;
+
+        if (age < 23) {
+            limit = salary * 2;
+        } else {
+            limit = salary * 3;
+        }
+
+        if (salary >= 50_000 && salary < 80_000) {
+            finalLimit = limit * 1.2;
+        } else if (salary >= 80_000){
+            finalLimit = limit * 1.5;
+        } else {
+            finalLimit = limit;
+        }
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + finalLimit + " рублей");
+
+        //Задание 7
+        age = 22;
+        salary = 80_000;
+        int wantedSum = 500_000;
+        double baseRate = 10;
+        double rate = baseRate;
+
+        if (age < 30 && age >= 23) {
+            rate = baseRate + 0.5;
+        } else if (age < 23) {
+            rate = baseRate + 1;
+        }
+
+        if (salary > 80_000){
+            rate = rate - 0.7;
+        }
+
+        double maximumPayment = salary / 2;
+        double payment = wantedSum / 12 + (wantedSum / 100 *(rate / 12));
+
+        var decision = "Подумаем";
+        if (payment <= maximumPayment) {
+            decision = "Одобрено";
+        } else {
+            decision = "Отказано";
+        }
+
+        System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maximumPayment + " рублей. Платеж по кредиту " + payment + " рублей. " + decision);
     }
 }
